@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <style>
+        .text-box {
+            border-color: black;
+            border-style: solid;
+            border-width: 1px;
+            padding: 8px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+
+        button {
+            margin-top: 20px;
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: blue;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: black;
+        }
+
+        #pesan {
+            border-collapse: collapse;
+            padding: 8px;
+        }
+
+        #pesan th {
+            padding-right: 100px;
+            text-align: left;
+        }
+
+        #input {
+            text-align: left;
+            font-weight: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-box">
+        <h1>Hubungi Kami</h1>
+        <p><b>Kantor:</b> di jalan belum jadi</p>
+        <p><b>Nomor Telepon:</b> 08XX-XXXX-XXXX</p>
+        <p><b>Email:</b> email@contoh.com</p>
+        <h1>Kirimkan Pesan
+        </h1>
+        <form action="">
+            <table id="pesan">
+                <tr>
+                    <th>Nama:</th>
+                    <th><input type="text"></th>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <th><input type="email"></th>
+                </tr>
+                <tr>
+                    <th>Jenis Kelamin:</th>
+                    <th id="input"><input type="radio"
+                               name="gender">Laki-laki <br> <input type="radio"
+                               name="gender">Perempuan</th>
+                </tr>
+                <tr>
+                    <th>Pesan anda :</th>
+                    <th><textarea name="pesan"
+                                  cols="50"
+                                  rows="10"></textarea></th>
+                </tr>
+                <tr>
+                    <th><button>Kirim</button></th>
+                </tr>
+            </table>
+        </form>
+
+
+    </div>
+    <button><a href="index.html">Kembali Ke Index</a></button>
+</body>
+
+</html>
