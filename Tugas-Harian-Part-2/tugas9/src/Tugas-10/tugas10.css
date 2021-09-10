@@ -1,0 +1,14 @@
+#clockCountdown{
+    text-align: left;
+    line-height: 10px;
+}
+#clockContainer{
+    display: flex;
+    justify-content: center;
+    margin: 5vh 0 0 0;
+    padding-right: 100px;
+}
+
+#clockCountdown p{
+    font-weight: bold;
+}
