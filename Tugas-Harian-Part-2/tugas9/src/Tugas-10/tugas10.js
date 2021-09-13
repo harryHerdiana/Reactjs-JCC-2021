@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./tugas10.css";
+import "./assets/tugas10.css";
 import Clock from "./clock";
 
 const Tugas10 = () => {

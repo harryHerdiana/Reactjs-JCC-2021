@@ -1,5 +1,5 @@
-import './tugas9.css';
-import image from "./img/logo.png"
+import './assets/tugas9.css';
+import image from "./assets/logo.png"
 import CheckBox from '../checkbox';
 import SendButton from '../SendButton';
 
