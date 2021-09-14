@@ -1,0 +1,77 @@
+.AppContainer{
+    text-align: center;
+}
+
+table{
+    width: 90%;
+    margin: 5vh auto;
+}
+
+thead{
+    color: white;
+    background-color: rgb(102, 102, 102);
+}
+table{
+    line-height: 2rem;
+    border:1px solid black;
+    border-collapse:collapse;
+}
+
+tr:nth-child(even){
+    color: white;
+    background-color: rgb(157, 157, 157);
+}
+
+.form-container{
+    border:1px solid gray;
+    width: 80%;
+    margin:0 auto;
+    text-align: left;
+    display:flex;
+    flex-direction: column;
+}
+
+.form-item{
+    margin: 10px;
+    width: 100%;
+}
+
+input{
+   float: right;
+   margin-right: 100px;
+   width: 30%;
+}
+button{
+    background-color: #111;
+    border-radius: 30px;
+    align-self: center;
+    margin:10px auto;
+    width: 20%;
+}
+
+button:active{
+   transform: scale(0.9);
+}
+
+.inner-button{
+    margin: 1rem;
+    width: 80px;
+    height: 40px;
+    font-size: 0.8rem;
+    color: black;
+    font-weight: bold;
+}
+
+
+.delete-button{
+    border: black solid ;
+    border-radius: 20px;
+
+    background-color: rgb(255, 255, 255);
+}
+
+.edit-button{
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(0, 0, 0);
+}
