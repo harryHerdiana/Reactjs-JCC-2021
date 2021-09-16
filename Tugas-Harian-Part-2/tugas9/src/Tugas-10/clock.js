@@ -1,3 +1,5 @@
+import React from "react"
+
 function Clock(){
     let date = new Date(); 
     let hh = date.getHours();

@@ -1,7 +1,8 @@
+import React from "react";
 import './assets/tugas9.css';
 import image from "./assets/logo.png"
-import CheckBox from '../checkbox';
-import SendButton from '../SendButton';
+import CheckBox from './checkbox';
+import SendButton from './SendButton';
 
 function Tugas9() {
   return (
