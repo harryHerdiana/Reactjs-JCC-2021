@@ -2,7 +2,7 @@
     text-align: center;
 }
 
-table{
+/* table{
     width: 90%;
     margin: 5vh auto;
 }
@@ -18,7 +18,7 @@ table{
 
 tr:nth-child(even){
     background-color: rgb(142, 223, 250);
-}
+} */
 
 .form-container{
     border:1px solid gray;
@@ -50,15 +50,7 @@ button{
     width: 80px;
     height: 40px;
     font-size: 0.8rem;
-    color: black;
-    font-weight: bold;
+
 }
 
 
-.delete-button{
-    background-color: rgb(243, 232, 83);
-}
-
-.edit-button{
-    background-color: rgb(70, 255, 94);
-}
