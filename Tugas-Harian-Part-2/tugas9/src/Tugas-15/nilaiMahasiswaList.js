@@ -30,6 +30,7 @@ const NilaiMahasiswaList = () => {
   };
 
   const handleEdit = (event) => {
+    console.log(event.target.value);
     let idMahasiswa = parseInt(event.target.value);
     history.push(`/tugas14/edit/${idMahasiswa}`);
     // functionEdit(idMahasiswa)
@@ -45,7 +46,7 @@ const NilaiMahasiswaList = () => {
   };
 
   const dataTable = dataMahasiswa
-
+  console.log({dataTable});
   const columns = [
     {
       title: "Name",

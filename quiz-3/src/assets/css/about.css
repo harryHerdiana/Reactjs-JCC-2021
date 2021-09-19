@@ -1,0 +1,33 @@
+h1 {
+    text-align: center;
+}
+
+.text-box {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    margin: 2rem;
+}
+
+button {
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: blue;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:active {
+    text-decoration: none;
+    color: black;
+}
