@@ -22,13 +22,13 @@ const AppList = () => {
   }, [fetchData, fetchStatus, setFetchStatus]);
 
   const handleDelete = (event) => {
-    let idApps = parseInt(event.target.value);
-    console.log(event.target.value);
+    let idApps = parseInt(event.currentTarget.value);
+    console.log(event.currentTarget);
     functionDelete(idApps);
   };
   const handleEdit = (event) => {
       console.log(event.target);
-    let idApps = parseInt(event.target.value);
+    let idApps = parseInt(event.currentTarget.value);
     history.push(`/mobile/form/edit/${idApps}`);
     functionEdit(idApps);
   };
@@ -107,7 +107,7 @@ const AppList = () => {
           <Button
             type="primary"
             onClick={handleEdit}
-            value={dataApps.id}
+            value={text.id}
           >
             Edit
           </Button>
@@ -115,7 +115,7 @@ const AppList = () => {
             type="default"
             danger
             onClick={handleDelete}
-            value={dataApps.id}
+            value={text.id}
           >
             Delete
           </Button>

@@ -11,7 +11,6 @@ const NilaiMahasiswaList = () => {
     const { fetchData, getScore,  functionDelete, functionEdit } = functions
 
     useEffect(() => {
-
         if (fetchStatus === false) {
             fetchData()
             setFetchStatus(true)

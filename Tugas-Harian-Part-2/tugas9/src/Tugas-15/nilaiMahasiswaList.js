@@ -25,7 +25,6 @@ const NilaiMahasiswaList = () => {
 
   const handleDelete = (event) => {
     let idMahasiswa = parseInt(event.target.value);
-
     functionDelete(idMahasiswa);
   };
 

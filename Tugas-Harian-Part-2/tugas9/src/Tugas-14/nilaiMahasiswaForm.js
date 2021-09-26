@@ -52,7 +52,7 @@ const NilaiMahasiswaForm = () => {
                 <br />
                 <strong style={{ width: "300px", display: "inline-block" }}>Mata Kuliah : </strong>
                 <input style={{ float: "right" }} onChange={handleChange} value={input.course} name="course" type="text" required />
-                <br />
+                <br />s
                 <br />
                 <strong style={{ width: "300px", display: "inline-block" }}>Nilai : </strong>
                 <input style={{ float: "right" }} onChange={handleChange} value={input.score} name="score" type="number" required min={0} max={100} />
