@@ -120,7 +120,13 @@ const GameList = () => {
 
   let dataTable = dataGames;
   const [rows, setRows] = useState(dataTable);
-  
+  const handleChangeName = function (event) {
+    let typeOfValue = event.target.value;
+    const filteredRows = dataGames.filter((row) => {
+      return row.name.toLowerCase().includes(typeOfValue.toLowerCase());
+    });
+    setRows(filteredRows);
+  };
   const handleChangeRelease = function (event) {
     let typeOfValue = event.target.value;
     const filteredRows = dataGames.filter((row) => {
@@ -179,7 +185,17 @@ const GameList = () => {
               />
             </Stack>
           </Grid>
-          <Grid xs={6}></Grid>
+          <Grid xs={2}></Grid>
+          <Grid item xs={2}>
+            <Stack>
+              <Typography variant="body1">Search Game Name</Typography>
+              <TextField
+                sx={{ width: "10rem" }}
+                onChange={handleChangeName}
+              />
+            </Stack>
+          </Grid>
+          <Grid xs={2}></Grid>
         </Grid>
       </Stack>
       <div style={{ position: "absolute", top: "25rem", left: "20rem" }}>

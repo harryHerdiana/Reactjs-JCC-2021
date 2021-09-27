@@ -132,10 +132,18 @@ const MovieList = () => {
   ];
   let dataTable = dataMovie
   const [rows, setRows] = useState(dataTable);
+  const handleChangeTitle = function (event) {
+    let typeOfValue = event.target.value;
+    const filteredRows = dataMovie.filter((row) => {
+      return row.title.toLowerCase().includes(typeOfValue.toLowerCase());
+    });
+    setRows(filteredRows);
+  };
   const handleChangeDuration = function (event) {
     let typeOfValue = event.target.value;
     const filteredRows = dataMovie.filter((row) => {
-      return row.duration.toLowerCase().includes(typeOfValue.toLowerCase());
+      console.log();
+      return row.description.toLowerCase().includes(typeOfValue.toLowerCase());
     });
     setTimeout(setRows(filteredRows), 2000);
   };
@@ -149,7 +157,7 @@ const MovieList = () => {
   const handleChangeYear = function (event) {
     let typeOfValue = event.target.value;
     const filteredRows = dataMovie.filter((row) => {
-      return row.year.toLowerCase().includes(typeOfValue.toLowerCase());
+      return row.review.toLowerCase().includes(typeOfValue.toLowerCase());
     });
     setTimeout(setRows(filteredRows), 2000);
   };
@@ -168,7 +176,7 @@ const MovieList = () => {
         <Grid container spacing={2}>
           <Grid item xs={2}>
             <Stack>
-              <Typography variant="body1">Sort By Duration</Typography>
+              <Typography variant="body1">Sort By Description</Typography>
               <TextField
                 sx={{ width: "10rem" }}
                 onChange={handleChangeDuration}
@@ -183,14 +191,24 @@ const MovieList = () => {
           </Grid>
           <Grid item xs={2}>
             <Stack>
-              <Typography variant="body1">Sort By Year</Typography>
+              <Typography variant="body1">Sort By Review</Typography>
               <TextField
                 sx={{ width: "10rem" }}
                 onChange={handleChangeYear}
               />
             </Stack>
           </Grid>
-          <Grid xs={6}></Grid>
+          <Grid xs={2}></Grid>
+          <Grid item xs={2}>
+            <Stack>
+              <Typography variant="body1">Search Movie Title</Typography>
+              <TextField
+                sx={{ width: "10rem" }}
+                onChange={handleChangeTitle}
+              />
+            </Stack>
+          </Grid>
+          <Grid xs={2}></Grid>
         </Grid>
       </Stack>
       <div style={{ position: "absolute", top: "25rem", left: "20rem" }}>
