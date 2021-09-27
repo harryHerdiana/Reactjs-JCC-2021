@@ -4,7 +4,6 @@ import { DataContext } from "../Context/DataContext";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
-import Avatar from '@mui/material/Avatar';
 import Cookies from "js-cookie";
 
 function Home() {
@@ -12,16 +11,6 @@ function Home() {
   const {
     dataGames,
     dataMovie,
-    setDataGames,
-    setDataMovie,
-    inputGames,
-    inputMovie,
-    setInputGames,
-    setInputMovie,
-    currentGamesId,
-    currentMovieId,
-    setCurrentGamesId,
-    setCurrentMovieId,
     gamesFetchStatus,
     movieFetchStatus,
     setGamesFetchStatus,
@@ -31,16 +20,6 @@ function Home() {
   const {
     fetchMovieData,
     fetchGamesData,
-    functionSubmitGames,
-    functionSubmitMovie,
-    functionUpdateGames,
-    functionUpdateMovie,
-    functionDeleteGames,
-    functionDeleteMovie,
-    functionEditGames,
-    functionEditMovie,
-    fetchGamesByID,
-    fetchMovieByID,
   } = functions;
 
   useEffect(() => {
@@ -50,9 +29,7 @@ function Home() {
       fetchMovieData();
       setMovieFetchStatus(true);
     }
-  }, [
-    fetchMovieData,
-    fetchGamesData,
+  }, [fetchGamesData,fetchMovieData,
     gamesFetchStatus,
     movieFetchStatus,
     setGamesFetchStatus,
@@ -84,6 +61,7 @@ function Home() {
             <div className="card">
               <div className="card_up">
                 <img
+                alt="some card"
                   src={val.image_url}
                   style={{
                     objectFit: "cover",
@@ -95,12 +73,12 @@ function Home() {
               </div>
               <div className="card_down">
                 <br />
-                <h3>{val.title.toUpperCase()}</h3>
+                <h3>{val.title !== null ? val.title.toUpperCase() : val.title}</h3>
                 <ul className="card_detail">
                   <li>{val.year}</li>
                   <li>{val.genre}</li>
                 </ul>
-                <p>{val.description.slice(0, 50)}. . .</p>
+                <p>{val.description !== null ? val.description.slice(0, 50) : val.description}. . .</p>
                 <Button value={val.id} onClick={handleClickMovie} variant="outline-dark">Read More</Button>
                 <br />
                 <br />
@@ -122,6 +100,7 @@ function Home() {
             <div className="card">
               <div className="card_up">
                 <img
+                alt="some card"
                   src={val.image_url}
                   style={{
                     objectFit: "cover",

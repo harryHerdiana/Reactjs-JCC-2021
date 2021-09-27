@@ -19,7 +19,7 @@ const AppList = () => {
       fetchData();
       setFetchStatus(true);
     }
-  }, [fetchData, fetchStatus, setFetchStatus]);
+  }, [fetchStatus, setFetchStatus]);
 
   const handleDelete = (event) => {
     let idApps = parseInt(event.currentTarget.value);

@@ -43,7 +43,7 @@ const Login = () => {
   };
   return (
     <div className="form-container">
-        <img className="form-image" src="https://image.freepik.com/free-vector/sign-concept-illustration_114360-5267.jpg"/>
+        <img alt="some stuff" className="form-image" src="https://image.freepik.com/free-vector/sign-concept-illustration_114360-5267.jpg"/>
       <form className="form" onSubmit={handleSubmit}>
         <Typography variant="h5"> Login to your account!</Typography>
         <br />

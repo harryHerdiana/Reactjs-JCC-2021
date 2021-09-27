@@ -1,5 +1,4 @@
 import React from "react";
-import logos from "../Assets/image/logoipsum-logo-16 footer.png";
 import "../Assets/css/styles.css";
 import Typography from "@mui/material/Typography";
 

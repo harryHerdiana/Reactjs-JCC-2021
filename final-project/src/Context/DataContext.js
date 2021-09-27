@@ -133,8 +133,8 @@ export const DataProvider = (props) => {
         newDataMovie.title = inputMovie.title;
         newDataMovie.year = inputMovie.year;
         setDataMovie([...dataMovie]);
-        history.push("/all_movie");
       });
+      history.push("/setting_movie");
   };
   const functionDeleteMovie = function (idMovie) {
     axios
@@ -145,9 +145,10 @@ export const DataProvider = (props) => {
         let newDataMovie = dataMovie.filter((res) => {
           return res.id !== idMovie;
         });
+        setMovieFetchStatus(false)
         setDataMovie(newDataMovie);
-        
       });
+      history.push("/setting_movie");
   };
   const functionEditMovie = function (idMovie) {
     axios
@@ -280,8 +281,8 @@ export const DataProvider = (props) => {
         newDataGames.platform = inputGames.platform;
         newDataGames.release = inputGames.release;
         setDataGames([...dataGames]);
-        history.push("/all_games");
       });
+      history.push("/setting_games");
   };
   const functionDeleteGames = function (idGames) {
     axios
@@ -293,6 +294,7 @@ export const DataProvider = (props) => {
           return res.id !== idGames;
         });
         setDataGames(newDataGames);
+        history.push("/all_games");
       });
   };
   const functionEditGames = function (idGames) {

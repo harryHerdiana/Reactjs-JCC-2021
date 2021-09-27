@@ -1,47 +1,41 @@
 import React, { useContext, useEffect } from "react";
-import { useParams, useHistory } from "react-router";
+import { useParams } from "react-router";
 import { DataContext } from "../Context/DataContext";
-import { Link } from "react-router-dom";
+
 import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
-import axios from "axios";
+
+import faker from "faker";
 
 const DetailedMovie = function () {
-  let history = useHistory();
   let { Value } = useParams();
   const {
-    dataMovie,
-    setDataMovie,
     inputMovie,
-    setInputMovie,
-    currentMovieId,
-    setCurrentMovieId,
-    movieFetchStatus,
-    setMovieFetchStatus,
+
     functions,
   } = useContext(DataContext);
-  const {
-    fetchMovieData,
-    functionSubmitMovie,
-    functionUpdateMovie,
-    functionDeleteMovie,
-    functionEditMovie,
-    fetchMovieByID,
-  } = functions;
+  const { fetchMovieByID } = functions;
 
   useEffect(() => {
     if (Value !== undefined) {
       fetchMovieByID(Value);
     }
   }, []);
+  const firstNameGen = faker.name.firstName();
+  const lastNameGen = faker.name.lastName();
+
   return (
     <div className="detail-page">
       <div className="detail-left">
-        <img className="detail-image" src={inputMovie.image_url} />
+        <img alt="movie detail" className="detail-image" src={inputMovie.image_url} />
       </div>
       <div className="detail-right">
         <br />
-        <Typography variant="h4">{inputMovie.title.toUpperCase()}</Typography>
+        <Typography variant="h4">
+          {inputMovie.title !== null
+            ? inputMovie.title.toUpperCase()
+            : inputMovie.title}
+        </Typography>
         <div className="detail-right-sub">
           <h5>{inputMovie.year}</h5>
           <h5>{inputMovie.duration} min</h5>
@@ -57,10 +51,14 @@ const DetailedMovie = function () {
         <br />
         <Typography variant="body2">{inputMovie.review}</Typography>
         <Avatar
+          style={{ marginBottom: "20px" }}
           className="avatar"
           alt=""
-          src="https://ui-avatars.com/api/?background=0D8ABC&color=fff"
+          src={`https://eu.ui-avatars.com/api/?name=${firstNameGen}+${lastNameGen}`}
         />
+        <Typography variant="subtitle1">
+          "{firstNameGen} {lastNameGen}"
+        </Typography>
       </div>
     </div>
   );

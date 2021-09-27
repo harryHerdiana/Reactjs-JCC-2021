@@ -1,30 +1,26 @@
 import React, { useContext, useEffect } from "react";
-import { useParams, useHistory } from "react-router";
+import { useParams } from "react-router";
 import { DataContext } from "../Context/DataContext";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import MenuItem from "@mui/material/MenuItem";
+
 const GameForm = function () {
-  let history = useHistory();
+  
   let { Value } = useParams();
   const {
-    dataGames,
-    setDataGames,
     inputGames,
     setInputGames,
     currentGamesId,
     setCurrentGamesId,
-    gamesFetchStatus,
-    setGamesFetchStatus,
     functions,
   } = useContext(DataContext);
   const {
-    fetchGamesData,
+
     functionSubmitGames,
     functionUpdateGames,
-    functionDeleteGames,
-    functionEditGames,
+
     fetchGamesByID,
   } = functions;
 
@@ -122,6 +118,18 @@ const GameForm = function () {
                 No
               </MenuItem>
             </TextField>
+            {/* <Stack>
+              <Typography variant="h5">Release Year</Typography>
+              <input
+                onChange={handleChange}
+                value={inputGames.release}
+                name="release"
+                type="number"
+                min={1980}
+                max={2021}
+                style={{ fontSize: "1rem" }}
+              />
+            </Stack> */}
             <TextField
             variant="outlined"
               label="Release Year"
@@ -131,6 +139,7 @@ const GameForm = function () {
               type="number"
               min={1980}
               max={2021}
+              defaultValue={2000}
             />
             <Button
               sx={{ width: "30%", position: "relative", left: "24vw" }}

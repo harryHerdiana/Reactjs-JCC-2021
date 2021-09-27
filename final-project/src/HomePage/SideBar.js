@@ -1,5 +1,4 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
 import SettingsIcon from "@mui/icons-material/Settings";
 import MovieTwoToneIcon from "@mui/icons-material/MovieTwoTone";
 import SportsEsportsTwoToneIcon from "@mui/icons-material/SportsEsportsTwoTone";

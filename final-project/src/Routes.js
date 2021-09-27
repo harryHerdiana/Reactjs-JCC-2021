@@ -27,7 +27,7 @@ import MovieForm from "./SettingPage/MovieForm";
 
 
 function Routes() {
-  const { loginStatus, setLoginStatus } = useContext(UserContext);
+  const { loginStatus } = useContext(UserContext);
   console.log(loginStatus);
   const LoginRoute = ({ ...props }) => {
     if (Cookies.get("token") !== undefined) {

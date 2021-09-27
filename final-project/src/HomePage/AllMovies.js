@@ -2,52 +2,43 @@ import React, { useEffect, useContext } from "react";
 import { useHistory } from "react-router";
 import { DataContext } from "../Context/DataContext";
 import Typography from "@mui/material/Typography";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 import Cookies from "js-cookie";
+import Rating from "@mui/material/Rating";
 
-
-function AllMovies(){
-    let history = useHistory();
+function AllMovies() {
+  let history = useHistory();
   const {
     dataMovie,
-    setDataMovie,
-    inputMovie,
-    setInputMovie,
-    currentMovieId,
-    setCurrentMovieId,
-    gamesFetchStatus,
     movieFetchStatus,
     setMovieFetchStatus,
     functions,
   } = useContext(DataContext);
   const {
     fetchMovieData,
-    functionSubmitMovie,
-    functionUpdateMovie,
-    functionDeleteMovie,
-    functionEditMovie,
-    fetchMovieByID,
   } = functions;
 
   useEffect(() => {
-    if (movieFetchStatus ===true) {
+    if (movieFetchStatus) {
       fetchMovieData();
       setMovieFetchStatus(false);
     }
-  }, [
-    movieFetchStatus,
-    setMovieFetchStatus,
-  ]);
-  const handleClickMovie = (event) =>{
+  }, [fetchMovieData,movieFetchStatus, setMovieFetchStatus]);
+  const handleClickMovie = (event) => {
     //   console.log("button clicked");
-    let idItem = parseInt(event.currentTarget.value)
+    let idItem = parseInt(event.currentTarget.value);
     console.log(idItem);
-    history.push(`/detail_movie/${idItem}`)
-  }
+    history.push(`/detail_movie/${idItem}`);
+  };
 
-    return(
-        <div class={Cookies.get("token")!==undefined ? "login-shifted" : "content"}>
-      <Typography className="home-title" variant="h3"> All Movies Collection</Typography>
+  return (
+    <div
+      class={Cookies.get("token") !== undefined ? "login-shifted" : "content"}
+    >
+      <Typography className="home-title" variant="h3">
+        {" "}
+        All Movies Collection
+      </Typography>
       <br />
       <div className="all-items-container">
         {dataMovie.map((val, _) => {
@@ -55,6 +46,7 @@ function AllMovies(){
             <div className="card">
               <div className="card_up">
                 <img
+                alt="some stuff"
                   src={val.image_url}
                   style={{
                     objectFit: "cover",
@@ -66,13 +58,36 @@ function AllMovies(){
               </div>
               <div className="card_down">
                 <br />
-                <h3>{val.title.toUpperCase()}</h3>
+                <h3>
+                  {val.title === undefined ? val.title : val.title !== null ? val.title.toUpperCase() : val.title }
+                </h3>
                 <ul className="card_detail">
                   <li>{val.year}</li>
                   <li>{val.genre}</li>
                 </ul>
-                <p>{val.description.slice(0, 50)}. . .</p>
-                <Button value={val.id} onClick={handleClickMovie} variant="outline-dark">Read More</Button>
+                <div>
+                  <Typography component="legend">Movie Rating</Typography>
+                  <Rating
+                    readOnly
+                    min={0}
+                    max={10}
+                    name="customized-10"
+                    value={val.rating}
+                  />
+                </div>
+                <p>
+                  {val.description !== null
+                    ? val.description.slice(0, 50)
+                    : val.description}
+                  . . .
+                </p>
+                <Button
+                  value={val.id}
+                  onClick={handleClickMovie}
+                  variant="outline-dark"
+                >
+                  Read More
+                </Button>
                 <br />
                 <br />
               </div>
@@ -81,7 +96,7 @@ function AllMovies(){
           );
         })}
       </div>
-</div>
+    </div>
   );
 }
 export default AllMovies;

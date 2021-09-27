@@ -11,7 +11,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { UserContext } from "../Context/UserContext";
 import Cookies from "js-cookie";
 import { useHistory } from "react-router";
-
+import HomeIcon from '@mui/icons-material/Home';
 function Header() {
   const { setLoginStatus } = useContext(UserContext)
   let history = useHistory();
@@ -20,7 +20,7 @@ function Header() {
     Cookies.remove("user");
     Cookies.remove("email");
     Cookies.remove("token");
-    history.push("/login");
+    history.push("/");
   };
   return (
     <section className="navbar-container">
@@ -53,6 +53,12 @@ function Header() {
           <Link to="/all_movie">
             <MovieTwoToneIcon id="navbar-icon" />
             <Typography variant="h6">Movie</Typography>
+          </Link>
+        </div>
+        <div className="nav-item">
+          <Link to="/">
+            <HomeIcon id="navbar-icon" />
+            <Typography variant="h6">Home</Typography>
           </Link>
         </div>
       </nav>

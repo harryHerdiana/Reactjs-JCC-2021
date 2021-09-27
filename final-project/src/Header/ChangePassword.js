@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState  } from "react";
 import axios from "axios";
 import { useHistory } from "react-router";
 import Button from "@mui/material/Button";
@@ -36,7 +36,7 @@ const ChangePassword = () => {
 
   return (
     <div className="form-container register">
-        <img className="form-image" src="https://image.freepik.com/free-vector/secure-login-concept-illustration_114360-4685.jpg"/>
+        <img alt="some stuff" className="form-image" src="https://image.freepik.com/free-vector/secure-login-concept-illustration_114360-4685.jpg"/>
       <form className="form " onSubmit={handleSubmit}>
           <Typography variant="h5">Register Now!</Typography>
           <Typography variant="body1">Open your account. It's free and only takes a minute.</Typography>
